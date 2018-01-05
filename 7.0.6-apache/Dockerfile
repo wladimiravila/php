@@ -98,6 +98,6 @@ ENV WEBSITE_ROLE_INSTANCE_ID localRoleInstance
 ENV WEBSITE_INSTANCE_ID localInstance
 ENV PATH ${PATH}:/home/site/wwwroot
 
-WORKDIR /var/www/html/web
+WORKDIR /var/www/html
 
 ENTRYPOINT ["/bin/init_container.sh"]
