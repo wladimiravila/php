@@ -60,7 +60,7 @@ RUN   \
    && rm -rf /var/log/apache2 \
    && mkdir -p /home/LogFiles \
    && ln -s /home/site/wwwroot /var/www/html \
-   && mkdir /home/site/wwwroot/web \
+   && mkdir -p /home/site/wwwroot/web \
    && ln -s /home/LogFiles /var/log/apache2 
    
 
