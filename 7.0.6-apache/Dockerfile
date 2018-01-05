@@ -3,7 +3,7 @@ MAINTAINER Azure App Services Container Images <appsvc-images@microsoft.com>
 
 COPY apache2.conf /bin/
 COPY init_container.sh /bin/
-COPY hostingstart.html /home/site/wwwroot/hostingstart.html
+
 
 RUN a2enmod rewrite expires include deflate
 
@@ -60,9 +60,11 @@ RUN   \
    && rm -rf /var/www/html \
    && rm -rf /var/log/apache2 \
    && mkdir -p /home/LogFiles \
+   && mkdir -p /var/www/html/web \
    && ln -s /home/site/wwwroot /var/www/html \
    && ln -s /home/LogFiles /var/log/apache2 
-
+   
+COPY hostingstart.html /home/site/wwwroot/web/hostingstart.html
 
 RUN { \
                 echo 'opcache.memory_consumption=128'; \
