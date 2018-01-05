@@ -87,6 +87,10 @@ RUN { \
 
 COPY sshd_config /etc/ssh/
 
+RUN apt-get update && apt-get install -y \
+  git \
+  subversion
+
 EXPOSE 2222 8080
 
 ENV APACHE_RUN_USER www-data
