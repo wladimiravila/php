@@ -35,8 +35,6 @@ RUN apt-get update \
          pdo \
          pdo_mysql \
          pdo_pgsql \
-         pdo_sqlsrv \
-         sqlsrv \
          pgsql \
          ldap \
          xml \
@@ -48,6 +46,9 @@ RUN apt-get update \
          mbstring \
          pcntl \
     && docker-php-ext-enable imagick
+    && pecl install sqlsrv-4.3.0
+    && pecl install pdo_sqlsrv-4.3.0
+    && docker-php-ext-enable sqlsrv pdo_sqlsrv
 
 RUN   \
    rm -f /var/log/apache2/* \
