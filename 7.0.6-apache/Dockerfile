@@ -35,6 +35,8 @@ RUN apt-get update \
          pdo \
          pdo_mysql \
          pdo_pgsql \
+         pdo_sqlsrv \
+         sqlsrv \
          pgsql \
          ldap \
          intl \
@@ -92,6 +94,6 @@ ENV WEBSITE_ROLE_INSTANCE_ID localRoleInstance
 ENV WEBSITE_INSTANCE_ID localInstance
 ENV PATH ${PATH}:/home/site/wwwroot
 
-WORKDIR /var/www/html
+WORKDIR /var/www/html/web
 
 ENTRYPOINT ["/bin/init_container.sh"]
