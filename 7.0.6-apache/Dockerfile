@@ -60,11 +60,10 @@ RUN   \
    && rm -rf /var/www/html \
    && rm -rf /var/log/apache2 \
    && mkdir -p /home/LogFiles \
-   && mkdir -p /var/www/html/web \
    && ln -s /home/site/wwwroot /var/www/html \
+   && mkdir -p /home/site/wwwroot/web \
    && ln -s /home/LogFiles /var/log/apache2 
    
-COPY hostingstart.html /home/site/wwwroot/web/hostingstart.html
 
 RUN { \
                 echo 'opcache.memory_consumption=128'; \
