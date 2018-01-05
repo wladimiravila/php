@@ -45,10 +45,7 @@ RUN apt-get update \
          bcmath \
          mbstring \
          pcntl \
-    && docker-php-ext-enable imagick \ 
-    && pecl install sqlsrv-4.3.0 \
-    && pecl install pdo_sqlsrv-4.3.0 \
-    && docker-php-ext-enable sqlsrv pdo_sqlsrv 
+    && docker-php-ext-enable imagick
 
 RUN   \
    rm -f /var/log/apache2/* \
