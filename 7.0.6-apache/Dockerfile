@@ -39,6 +39,7 @@ RUN apt-get update \
          sqlsrv \
          pgsql \
          ldap \
+         xml \
          intl \
          mcrypt \
          gmp \
