@@ -4,7 +4,6 @@ MAINTAINER Azure App Services Container Images <appsvc-images@microsoft.com>
 COPY apache2.conf /bin/
 COPY init_container.sh /bin/
 
-
 RUN a2enmod rewrite expires include deflate
 
 # install the PHP extensions we need
@@ -79,7 +78,7 @@ RUN { \
                 echo 'display_errors=Off'; \
                 echo 'log_errors=On'; \
                 echo 'display_startup_errors=Off'; \
-                echo 'date.timezone=UTC'; \
+                echo 'date.timezone=America/Bogota'; \
                 echo 'expose_php = Off'; \
                 echo 'memory_limit = 256M'; \
                 echo 'upload_max_filesize = 10M'; \
